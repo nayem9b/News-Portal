@@ -12,16 +12,22 @@ const  displayCategory = (categories) =>{
     const categoryContainer = document.getElementById('list-container');
     categories.forEach(category =>{
         const categoryDiv  = document.createElement('div');
-        categoryDiv.classList.add('col');
+    
         categoryDiv.innerHTML = `
-        <div class="flex">
-            <ul id="all-menu" class="menu menu-horizontal bg-base-100 rounded-box">
-            <li><a>${category.category_name}</a></li>
+        <div class="">
+            <ul id="all-menu" class="menu bg-base-100 rounded-box">
+            <li><a class="mx-auto" onclick="clicked()">${category.category_name}</a></li>
+            </ul>
         </div>
         `;
         categoryContainer.appendChild(categoryDiv);
     });
 }
+
+clicked=()=>{
+ 
+}
+
 
 
 

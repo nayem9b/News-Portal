@@ -11,42 +11,38 @@ const  displayNews = (allNews) =>{
         const newsDiv  = document.createElement('div');
         newsDiv.classList.add('col');
         newsDiv.innerHTML = `
-        <div class="flex">
-        <div class="card card-side bg-base-100 shadow">
-        <figure><img class="object-contain h-60 w-96" src="${news.thumbnail_url}" alt="Album"></figure>
-        <div class="card-body">
-          <h2 class="card-title">${news.title}</h2>
-          <p>${news.details.slice(0,200)+"..."}</p>
-          <div class="avatar">
-         <div class="w-10 rounded-full">
-       <img class="object-contain"src="${news.author.img}" />
-           </div>
-         </div
-          <p>${news.author.name ? news.author.name : "No data available"}</p>
-          <p>Total View: ${news.total_view? news.total_view : "No views"}</p>
+      
 
-          <div class="card-actions justify-end">
-
-          <!-- The button to open modal -->
-<label for="my-modal-6" class="btn modal-button">open news</label>
-
-<!-- Put this part before </body> tag -->
-<input type="checkbox" id="my-modal-6" class="modal-toggle" />
-<div class="modal modal-bottom sm:modal-middle">
-  <div class="modal-box">
-    <h3 class="font-bold text-lg">${news.title}</h3>
-    <img class="object-contain h-60 w-96" src="${news.image_url}" alt="Album">
-    <p class="py-4">${news.details}</p>
-    <div class="modal-action">
-      <label for="my-modal-6" class="btn">Yay!</label>
+        <a href="#" class="grid grid-cols-2 items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+    
+    <div class="flex flex-col justify-between p-4 leading-normal">
+    <img class="object-contain h-60 w-96" src="${news.thumbnail_url}" alt="Album">
+    <h2 class="card-title">${news.title}</h2>
+    <p>${news.details.slice(0,200)+"..."}</p>
+    <div class="avatar">
+   <div class="w-10 rounded-full">
+ <img class="object-contain"src="${news.author.img}" />
+     </div>
+   </div
+    <p>${news.author.name ? news.author.name : "No data available"}</p>
+    <p>Total View: ${news.total_view? news.total_view : "No views"}</p>
     </div>
-  </div>
-</div>
-           
-          </div>
+    <label for="my-modal-6" class="btn modal-button grid">open news</label>
+    <input type="checkbox" id="my-modal-6" class="modal-toggle" />
+    <div class="modal modal-bottom sm:modal-middle">
+      <div class="modal-box">
+        <h3 class="font-bold text-lg">${news.title}</h3>
+        <img class="object-contain h-60 w-96" src="${news.image_url}" alt="Album">
+        <p class="py-4">${news.details}</p>
+        <div class="modal-action">
+          <label for="my-modal-6" class="btn">Yay!</label>
         </div>
       </div>
-        </div>
+    </div>
+    
+</a>
+
+
         `;
         newsContainer.appendChild(newsDiv);
     });
@@ -56,3 +52,7 @@ loadAllNews();
 displayNews();
 
 {/* <button class="btn btn-primary">Listen</button> */}
+
+
+
+
