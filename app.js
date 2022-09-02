@@ -2,8 +2,10 @@ const loadAllCatagory = async () => {
     const response = await fetch("https://openapi.programming-hero.com/api/news/categories");
     const data = await response.json();
      displayCategory(data.data.news_category)
-    console.log(data.data.news_category[0].category_name)
 }
+
+
+
 
 
 const  displayCategory = (categories) =>{
@@ -25,6 +27,15 @@ const  displayCategory = (categories) =>{
 
 
 
+
+
+
+
+
 loadAllCatagory();
 
 displayCategory();
+
+loadAllNews();
+// displayNews();
+// take();
