@@ -3,11 +3,6 @@ const loadAllCatagory = async () => {
     const data = await response.json();
      displayCategory(data.data.news_category)
 }
-
-
-
-
-
 const  displayCategory = (categories) =>{
     const categoryContainer = document.getElementById('list-container');
     categories.forEach(category =>{
@@ -25,7 +20,21 @@ const  displayCategory = (categories) =>{
 }
 
 clicked=()=>{
- 
+    const sorting=()=>{
+        fetch('https://openapi.programming-hero.com/api/news/category/01')
+        .then(res => res.json())
+        .then(data => allData(data.data))
+     }
+     const allData =(data)=>{
+        data.forEach(news=>{
+           console.log(news)
+        })
+     }
+     allData(); 
+
+    
+ sorting();
+
 }
 
 

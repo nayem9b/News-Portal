@@ -13,7 +13,7 @@ const  displayNews = (allNews) =>{
         newsDiv.innerHTML = `
       
 
-        <a href="#" class="grid grid-cols-2 items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+        <a href="#" class="grid grid-cols-1 mx-auto items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
     
     <div class="flex flex-col justify-between p-4 leading-normal">
     <img class="object-contain h-60 w-96" src="${news.thumbnail_url}" alt="Album">
@@ -35,7 +35,7 @@ const  displayNews = (allNews) =>{
         <img class="object-contain h-60 w-96" src="${news.image_url}" alt="Album">
         <p class="py-4">${news.details}</p>
         <div class="modal-action">
-          <label for="my-modal-6" class="btn">Yay!</label>
+          <label for="my-modal-6" class="btn">Okay!</label>
         </div>
       </div>
     </div>
