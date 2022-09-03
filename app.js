@@ -136,7 +136,7 @@ const loadAllNews = async () => {
 }
 
 const regNews= document.getElementById('news-count');
-regNews.innerHTML=`<h1 class="text-xl">5 news found</h1>`
+regNews.innerHTML=`<h1 class="text-xl">5 News Found</h1>`
 
 const spinner = document.getElementById("spinner");
 spinner.classList.remove("hidden");
@@ -186,15 +186,6 @@ const  displayNews = (allNews) =>{
     });
 }
 
-const toggleSpinner = isLoading => {
-    const loaderSection = document.getElementById('loader');
-    if(isLoading){
-        loaderSection.classList.remove('hidden')
-    }
-    else{
-        loaderSection.classList.add('hidden');
-    }
-}
 
 loadAllNews();
 displayNews();
@@ -518,19 +509,3 @@ arts=()=>{
         
         
         }
-
-
-
-
-
-
-
-
-
-
-
-loadAllCatagory();
-
-displayCategory();
-
-loadAllNews();
