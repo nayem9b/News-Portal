@@ -1,46 +1,24 @@
-
-
 breakingnews=()=>{
-
-
 const loadAllNews = async () => {
     const response = await fetch('https://openapi.programming-hero.com/api/news/category/01');
     const data = await response.json();
     displayNews(data.data)
     console.log(data.data[0])
 }
+const regNews= document.getElementById('news-count');
+regNews.innerHTML=`<h1 id="move"class="text-xl">8 News Found</h1>`
+
+const spinner = document.getElementById("spinner");
+spinner.classList.remove("hidden");
+
 
 const  displayNews = (allNews) =>{
-
-    const  displayCategory = (categories) =>{
-        const categoryContainer = document.getElementById('list-container');
-            const categoryDiv  = document.createElement('div');
-        
-            categoryDiv.innerHTML = `
-            <div class="">
-                <ul id="all-menu" class="menu flex bg-base-100 rounded-box">
-                <li><a class="mx-auto" onclick="breakingnews()">Breaking News</a></li>
-                <li><a class="mx-auto" onclick="regularnews()">Regular News</a></li>
-                <li><a class="mx-auto" onclick="internationalNews()">International News</a></li>
-                <li><a class="mx-auto" onclick="sports()">Sports</a></li>
-                <li><a class="mx-auto" onclick="entertainment()">Entertainment</a></li>
-                <li><a class="mx-auto" onclick="culture()">Culture</a></li>
-                <li><a class="mx-auto" onclick="arts()">Arts</a></li>
-                <li><a class="mx-auto" onclick="allNews()">All News</a></li>
-                </ul>
-            </div>
-            `;
-            categoryContainer.appendChild(categoryDiv);
-    }
-    displayCategory()
-
-
-
-    const newsContainer = document.getElementById('list-container');
+ const newsContainer = document.getElementById('list-container');
     newsContainer.textContent = '' ;
     allNews.forEach(news =>{ 
         const newsDiv  = document.createElement('div');
         newsDiv.classList.add('col');
+        spinner.classList.add("hidden");
         newsDiv.innerHTML = `
       
 
@@ -91,6 +69,12 @@ const loadAllNews = async () => {
     displayNews(data.data)
     console.log(data.data[0])
 }
+const regNews= document.getElementById('news-count');
+regNews.innerHTML=`<h1 class="text-xl" >5 News found</h1>`
+
+const spinner = document.getElementById("spinner");
+spinner.classList.remove("hidden");
+
 
 const  displayNews = (allNews) =>{
     const newsContainer = document.getElementById('list-container');
@@ -98,6 +82,7 @@ const  displayNews = (allNews) =>{
     allNews.forEach(news =>{ 
         const newsDiv  = document.createElement('div');
         newsDiv.classList.add('col');
+        spinner.classList.add("hidden");
         newsDiv.innerHTML = `
       
 
@@ -150,12 +135,20 @@ const loadAllNews = async () => {
     console.log(data.data[0])
 }
 
+const regNews= document.getElementById('news-count');
+regNews.innerHTML=`<h1 class="text-xl">5 news found</h1>`
+
+const spinner = document.getElementById("spinner");
+spinner.classList.remove("hidden");
+
+
 const  displayNews = (allNews) =>{
     const newsContainer = document.getElementById('list-container');
     newsContainer.textContent = '' ;
     allNews.forEach(news =>{ 
         const newsDiv  = document.createElement('div');
         newsDiv.classList.add('col');
+        spinner.classList.add("hidden");
         newsDiv.innerHTML = `
       
 
@@ -216,6 +209,11 @@ const loadAllNews = async () => {
     displayNews(data.data)
     console.log(data.data[0])
 }
+const regNews= document.getElementById('news-count');
+regNews.innerHTML=`<h1 class="text-xl">3 News Found</h1>`
+ 
+const spinner = document.getElementById("spinner");
+spinner.classList.remove("hidden");
 
 const  displayNews = (allNews) =>{
     const newsContainer = document.getElementById('list-container');
@@ -223,6 +221,7 @@ const  displayNews = (allNews) =>{
     allNews.forEach(news =>{ 
         const newsDiv  = document.createElement('div');
         newsDiv.classList.add('col');
+        spinner.classList.add("hidden");
         newsDiv.innerHTML = `
       
 
@@ -265,8 +264,6 @@ displayNews();
 
 }
 Entertainment=()=>{
-
-
 const loadAllNews = async () => {
     const response = await fetch('https://openapi.programming-hero.com/api/news/category/05');
     const data = await response.json();
@@ -274,12 +271,19 @@ const loadAllNews = async () => {
     console.log(data.data[0])
 }
 
+const regNews= document.getElementById('news-count');
+regNews.innerHTML=`<h1 class="text-xl">3 News Found</h1>`
+
+const spinner = document.getElementById("spinner");
+spinner.classList.remove("hidden");
+
 const  displayNews = (allNews) =>{
     const newsContainer = document.getElementById('list-container');
     newsContainer.textContent = '' ;
     allNews.forEach(news =>{ 
         const newsDiv  = document.createElement('div');
         newsDiv.classList.add('col');
+        spinner.classList.add("hidden");
         newsDiv.innerHTML = `
       
 
@@ -331,18 +335,22 @@ const loadAllNews = async () => {
     console.log(data.data[0])
 }
 
+const regNews= document.getElementById('news-count');
+regNews.innerHTML=`<h1 class="text-xl">No News Found</h1>`
+
+const spinner = document.getElementById("spinner");
+spinner.classList.remove("hidden");
+
 const  displayNews = (allNews) =>{
     const newsContainer = document.getElementById('list-container');
     newsContainer.textContent = '' ;
     allNews.forEach(news =>{ 
         const newsDiv  = document.createElement('div');
         newsDiv.classList.add('col');
+        spinner.classList.add("hidden");
         newsDiv.innerHTML = `
-      
-
-        <a href="#" class="grid grid-cols-1 mx-auto items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-    
-    <div class="flex flex-col justify-between p-4 leading-normal">
+      <a href="#" class="grid grid-cols-1 mx-auto items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+      <div class="flex flex-col justify-between p-4 leading-normal">
     <img class="object-contain h-60 w-96" src="${news.thumbnail_url}" alt="Album">
     <h2 class="card-title">${news.title}</h2>
     <p>${news.details.slice(0,200)+"..."}</p>
@@ -388,6 +396,13 @@ arts=()=>{
         displayNews(data.data)
         console.log(data.data[0])
     }
+
+    const regNews= document.getElementById('news-count');
+    regNews.innerHTML=`<h1 class="text-xl">2 News Found</h1>`
+
+    const spinner = document.getElementById("spinner");
+    spinner.classList.remove("hidden");
+
     
     const  displayNews = (allNews) =>{
         const newsContainer = document.getElementById('list-container');
@@ -395,6 +410,7 @@ arts=()=>{
         allNews.forEach(news =>{ 
             const newsDiv  = document.createElement('div');
             newsDiv.classList.add('col');
+            spinner.classList.add("hidden");
             newsDiv.innerHTML = `
           
     
@@ -447,6 +463,11 @@ arts=()=>{
             displayNews(data.data)
             console.log(data.data[0])
         }
+        const regNews= document.getElementById('news-count');
+        regNews.innerHTML=`<h1 class="text-xl">26 News Found</h1>`
+
+        const spinner = document.getElementById("spinner");
+        spinner.classList.remove("hidden");
         
         const  displayNews = (allNews) =>{
             const newsContainer = document.getElementById('list-container');
@@ -454,6 +475,7 @@ arts=()=>{
             allNews.forEach(news =>{ 
                 const newsDiv  = document.createElement('div');
                 newsDiv.classList.add('col');
+                spinner.classList.add("hidden");
                 newsDiv.innerHTML = `
               
         
