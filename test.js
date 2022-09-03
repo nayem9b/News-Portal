@@ -1,5 +1,5 @@
 const loadAllNews = async () => {
-    const response = await fetch('https://openapi.programming-hero.com/api/news/category/01');
+    const response = await fetch('https://openapi.programming-hero.com/api/news/category/03');
     const data = await response.json();
     displayNews(data.data)
     console.log(data.data[0])
@@ -25,15 +25,16 @@ const  displayNews = (allNews) =>{
      </div>
    </div
     <p>${news.author.name ? news.author.name : "No data available"}</p>
+    <p>${news.author.published_date ? news.author.published_date : "No data available"}</p>
     <p>Total View: ${news.total_view? news.total_view : "No views"}</p>
     </div>
     <label for="my-modal-6" class="btn modal-button grid">open news</label>
     <input type="checkbox" id="my-modal-6" class="modal-toggle" />
     <div class="modal modal-bottom sm:modal-middle">
       <div class="modal-box">
-        <h3 class="font-bold text-lg">${news.title}</h3>
+        <h3 class="font-bold text-lg mb-6">${news.title}</h3>
         <img class="object-contain h-60 w-96" src="${news.image_url}" alt="Album">
-        <p class="py-4">${news.details}</p>
+        <p class="py-4 mb-5">${news.details}</p>
         <div class="modal-action">
           <label for="my-modal-6" class="btn">Okay!</label>
         </div>
