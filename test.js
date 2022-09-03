@@ -1,3 +1,38 @@
+const loadAllCatagory = async () => {
+    const response = await fetch("https://openapi.programming-hero.com/api/news/categories");
+    const data = await response.json();
+     displayCategory(data.data.news_category)
+}
+const  displayCategory = (categories) =>{
+    const categoryContainer = document.getElementById('list-container');
+        const categoryDiv  = document.createElement('div');
+    
+        categoryDiv.innerHTML = `
+        
+            <ul id="all-menu" class="menu flex bg-base-100 rounded-box">
+            <li><a class="mx-auto" onclick="breakingnews()">Breaking News</a></li>
+            <li><a class="mx-auto" onclick="regularnews()">Regular News</a></li>
+            <li><a class="mx-auto" onclick="internationalNews()">International News</a></li>
+            <li><a class="mx-auto" onclick="sports()">Sports</a></li>
+            <li><a class="mx-auto" onclick="entertainment()">Entertainment</a></li>
+            <li><a class="mx-auto" onclick="culture()">Culture</a></li>
+            <li><a class="mx-auto" onclick="arts()">Arts</a></li>
+            <li><a class="mx-auto" onclick="allNews()">All News</a></li>
+            </ul>
+      
+        `;
+        categoryContainer.appendChild(categoryDiv);
+}
+
+loadAllCatagory()
+
+
+
+
+
+
+
+
 const loadAllNews = async () => {
     const response = await fetch('https://openapi.programming-hero.com/api/news/category/03');
     const data = await response.json();
@@ -52,7 +87,7 @@ const  displayNews = (allNews) =>{
 loadAllNews();
 displayNews();
 
-{/* <button class="btn btn-primary">Listen</button> */}
+
 
 
 

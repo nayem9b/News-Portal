@@ -1,45 +1,4 @@
-const loadAllCatagory = async () => {
-    const response = await fetch("https://openapi.programming-hero.com/api/news/categories");
-    const data = await response.json();
-     displayCategory(data.data.news_category)
-}
-// const  displayCategory = (categories) =>{
-//     const categoryContainer = document.getElementById('list-container');
-//     categories.forEach(category =>{
-//         const categoryDiv  = document.createElement('div');
-    
-//         categoryDiv.innerHTML = `
-//         <div class="">
-//             <ul id="all-menu" class="menu bg-base-100 rounded-box">
-//             <li><a class="mx-auto" onclick="clicked()">${category.category_name}</a></li>
-//             </ul>
-//         </div>
-//         `;
-//         categoryContainer.appendChild(categoryDiv);
-//     });
-// }
-const  displayCategory = (categories) =>{
-    const categoryContainer = document.getElementById('list-container');
-    // categories.forEach(category =>{
-        const categoryDiv  = document.createElement('div');
-    
-        categoryDiv.innerHTML = `
-        <div class="">
-            <ul id="all-menu" class="menu bg-base-100 rounded-box">
-            <li><a class="mx-auto" onclick="breakingnews()">Breaking News</a></li>
-            <li><a class="mx-auto" onclick="regularnews()">Regular News</a></li>
-            <li><a class="mx-auto" onclick="internationalNews()">International News</a></li>
-            <li><a class="mx-auto" onclick="sports()">Sports</a></li>
-            <li><a class="mx-auto" onclick="entertainment()">Entertainment</a></li>
-            <li><a class="mx-auto" onclick="culture()">Culture</a></li>
-            <li><a class="mx-auto" onclick="arts()">Arts</a></li>
-            <li><a class="mx-auto" onclick="allNews()">All News</a></li>
-            </ul>
-        </div>
-        `;
-        categoryContainer.appendChild(categoryDiv);
-    // })    ;
-}
+
 
 breakingnews=()=>{
 
@@ -52,7 +11,33 @@ const loadAllNews = async () => {
 }
 
 const  displayNews = (allNews) =>{
+
+    const  displayCategory = (categories) =>{
+        const categoryContainer = document.getElementById('list-container');
+            const categoryDiv  = document.createElement('div');
+        
+            categoryDiv.innerHTML = `
+            <div class="">
+                <ul id="all-menu" class="menu flex bg-base-100 rounded-box">
+                <li><a class="mx-auto" onclick="breakingnews()">Breaking News</a></li>
+                <li><a class="mx-auto" onclick="regularnews()">Regular News</a></li>
+                <li><a class="mx-auto" onclick="internationalNews()">International News</a></li>
+                <li><a class="mx-auto" onclick="sports()">Sports</a></li>
+                <li><a class="mx-auto" onclick="entertainment()">Entertainment</a></li>
+                <li><a class="mx-auto" onclick="culture()">Culture</a></li>
+                <li><a class="mx-auto" onclick="arts()">Arts</a></li>
+                <li><a class="mx-auto" onclick="allNews()">All News</a></li>
+                </ul>
+            </div>
+            `;
+            categoryContainer.appendChild(categoryDiv);
+    }
+    displayCategory()
+
+
+
     const newsContainer = document.getElementById('list-container');
+    newsContainer.textContent = '' ;
     allNews.forEach(news =>{ 
         const newsDiv  = document.createElement('div');
         newsDiv.classList.add('col');
@@ -96,22 +81,6 @@ const  displayNews = (allNews) =>{
 loadAllNews();
 displayNews();
 
-
-    // const sorting=()=>{
-    //     fetch('https://openapi.programming-hero.com/api/news/category/01')
-    //     .then(res => res.json())
-    //     .then(data => console.log(data.data))
-    //  }
-    //  const allData =(data)=>{
-    //     data.forEach(news=>{
-    //        console.log(news)
-    //     })
-    //  }
-    //  allData(); 
-
-    
- sorting();
-
 }
 regularnews=()=>{
 
@@ -125,6 +94,7 @@ const loadAllNews = async () => {
 
 const  displayNews = (allNews) =>{
     const newsContainer = document.getElementById('list-container');
+    newsContainer.textContent = '' ;
     allNews.forEach(news =>{ 
         const newsDiv  = document.createElement('div');
         newsDiv.classList.add('col');
@@ -182,6 +152,7 @@ const loadAllNews = async () => {
 
 const  displayNews = (allNews) =>{
     const newsContainer = document.getElementById('list-container');
+    newsContainer.textContent = '' ;
     allNews.forEach(news =>{ 
         const newsDiv  = document.createElement('div');
         newsDiv.classList.add('col');
@@ -222,24 +193,18 @@ const  displayNews = (allNews) =>{
     });
 }
 
+const toggleSpinner = isLoading => {
+    const loaderSection = document.getElementById('loader');
+    if(isLoading){
+        loaderSection.classList.remove('hidden')
+    }
+    else{
+        loaderSection.classList.add('hidden');
+    }
+}
+
 loadAllNews();
 displayNews();
-
-
-    // const sorting=()=>{
-    //     fetch('https://openapi.programming-hero.com/api/news/category/01')
-    //     .then(res => res.json())
-    //     .then(data => console.log(data.data))
-    //  }
-    //  const allData =(data)=>{
-    //     data.forEach(news=>{
-    //        console.log(news)
-    //     })
-    //  }
-    //  allData(); 
-
-    
- sorting();
 
 }
 sports=()=>{
@@ -254,6 +219,7 @@ const loadAllNews = async () => {
 
 const  displayNews = (allNews) =>{
     const newsContainer = document.getElementById('list-container');
+    newsContainer.textContent = '' ;
     allNews.forEach(news =>{ 
         const newsDiv  = document.createElement('div');
         newsDiv.classList.add('col');
@@ -296,22 +262,6 @@ const  displayNews = (allNews) =>{
 
 loadAllNews();
 displayNews();
-
-
-    // const sorting=()=>{
-    //     fetch('https://openapi.programming-hero.com/api/news/category/01')
-    //     .then(res => res.json())
-    //     .then(data => console.log(data.data))
-    //  }
-    //  const allData =(data)=>{
-    //     data.forEach(news=>{
-    //        console.log(news)
-    //     })
-    //  }
-    //  allData(); 
-
-    
- sorting();
 
 }
 Entertainment=()=>{
@@ -326,6 +276,7 @@ const loadAllNews = async () => {
 
 const  displayNews = (allNews) =>{
     const newsContainer = document.getElementById('list-container');
+    newsContainer.textContent = '' ;
     allNews.forEach(news =>{ 
         const newsDiv  = document.createElement('div');
         newsDiv.classList.add('col');
@@ -368,24 +319,8 @@ const  displayNews = (allNews) =>{
 
 loadAllNews();
 displayNews();
-
-
-    // const sorting=()=>{
-    //     fetch('https://openapi.programming-hero.com/api/news/category/01')
-    //     .then(res => res.json())
-    //     .then(data => console.log(data.data))
-    //  }
-    //  const allData =(data)=>{
-    //     data.forEach(news=>{
-    //        console.log(news)
-    //     })
-    //  }
-    //  allData(); 
-
-    
- sorting();
-
 }
+
 culture=()=>{
 
 
@@ -398,6 +333,7 @@ const loadAllNews = async () => {
 
 const  displayNews = (allNews) =>{
     const newsContainer = document.getElementById('list-container');
+    newsContainer.textContent = '' ;
     allNews.forEach(news =>{ 
         const newsDiv  = document.createElement('div');
         newsDiv.classList.add('col');
@@ -441,21 +377,6 @@ const  displayNews = (allNews) =>{
 loadAllNews();
 displayNews();
 
-
-    // const sorting=()=>{
-    //     fetch('https://openapi.programming-hero.com/api/news/category/01')
-    //     .then(res => res.json())
-    //     .then(data => console.log(data.data))
-    //  }
-    //  const allData =(data)=>{
-    //     data.forEach(news=>{
-    //        console.log(news)
-    //     })
-    //  }
-    //  allData(); 
-
-    
- sorting();
 
 }
 arts=()=>{
@@ -470,6 +391,7 @@ arts=()=>{
     
     const  displayNews = (allNews) =>{
         const newsContainer = document.getElementById('list-container');
+        newsContainer.textContent = '' ;
         allNews.forEach(news =>{ 
             const newsDiv  = document.createElement('div');
             newsDiv.classList.add('col');
@@ -528,6 +450,7 @@ arts=()=>{
         
         const  displayNews = (allNews) =>{
             const newsContainer = document.getElementById('list-container');
+            newsContainer.textContent = '' ;
             allNews.forEach(news =>{ 
                 const newsDiv  = document.createElement('div');
                 newsDiv.classList.add('col');
@@ -589,5 +512,3 @@ loadAllCatagory();
 displayCategory();
 
 loadAllNews();
-// displayNews();
-// take();
